@@ -111,7 +111,7 @@ form {
   position: absolute;
   right: 5px;
   top: 10px;
-  background: url("/assets/img/close.png");
+  background: url("assets/img/close.png");
   border: none;
   background-repeat: no-repeat;
   background-position: center;
