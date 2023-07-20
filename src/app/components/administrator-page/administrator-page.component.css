@@ -1,0 +1,8 @@
+.administrator-container {
+  width: 100%;
+  height: fit-content;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  margin: 35px 0;
+}

@@ -1,0 +1,18 @@
+<div class="admin-slider-container">
+  <h1 class="admin-slider-title" (click)="toggle()">Слайдер</h1>
+  <div *ngIf="visible" class="admin-slider-content">
+    <div (click)="addSliderImg()" class="admin-slider-content-add-item">
+      <span class="icon"></span>
+    </div>
+    <div
+      *ngFor="let slide of sliderData$ | async"
+      class="admin-slider-content-item"
+      [ngStyle]="{ 'background-image': getUrl(slide.url) }"
+    >
+      <button
+        class="admin-slider-content-remove-item"
+        (click)="removeSlide(slide.id || '')"
+      ></button>
+    </div>
+  </div>
+</div>

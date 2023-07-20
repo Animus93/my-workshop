@@ -1,0 +1,15 @@
+#app-container {
+  width: 90vw;
+  max-width: 1500px;
+  row-gap: 15px;
+  display: grid;
+  margin: 0 auto;
+  grid-template-rows: 100px, fit-content;
+  grid-template-columns: 100%;
+  /* border: 1px dotted rgb(133, 26, 26); */
+}
+@media(max-width: 524px) {
+  #app-container {
+    width: 100%;
+  }
+}

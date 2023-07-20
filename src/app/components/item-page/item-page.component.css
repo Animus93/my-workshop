@@ -1,0 +1,63 @@
+.item-page-container {
+  width: 100%;
+  height: fit-content;
+  padding-top: 17px;
+  padding-bottom: 35px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.item-content {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.item-title {
+  padding: 20px;
+  font-size: 18px;
+  font-family: "Exo 2", sans-serif;
+}
+
+.item-img {
+  width: 90lvw;
+  max-width: 1000px;
+}
+
+.item-back-btn {
+  background-color: rgba(0, 0, 0, 0.404);
+  color: white;
+  text-decoration: none;
+  font-size: 18px;
+  font-family: "Exo 2", sans-serif;
+  transition: color 0.5s ease-in-out;
+  padding: 10px 20px;
+  margin: 5px;
+  position: fixed;
+  left: 10px;
+  top: 50px;
+  transition: all 0.5s;
+}
+.item-back-btn:hover {
+  background-color: rgba(0, 0, 0, 0.932);
+}
+
+.item-price {
+  align-self: self-start;
+  padding: 20px 0;
+  font-size: 18px;
+  font-family: "Exo 2", sans-serif;
+}
+.item-description {
+  align-self: self-start;
+  padding: 20px 15px;
+  font-size: 18px;
+  font-family: "Exo 2", sans-serif;
+  background-color: #ebcc92;
+  width: 100%;
+}
+.telegram {
+  width: 100%;
+  padding-bottom: 20px;
+}

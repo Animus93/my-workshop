@@ -1,0 +1,51 @@
+.FAQ-container {
+  border-radius: 5px;
+  width: 100%;
+  height: fit-content;
+  justify-content: center;
+  /* padding: 30px 0; */
+  padding-top: 40px;
+
+}
+.FAQ-item {
+  cursor: pointer;
+}
+.FAQ-container-title {
+  font-family: "Exo 2", sans-serif;
+  margin-left: 35px;
+  font-size: 32px;
+  line-height: 36px;
+  font-weight: 700;
+}
+.FAQ-title-blok {
+  padding: 10px 5px;
+  position: relative;
+}
+.FAQ-title {
+  /* border: 1px solid black; */
+
+  font-family: "Exo 2", sans-serif;
+  /* position: relative; */
+}
+.icon {
+  position: absolute;
+  right: 20px;
+  top: 5px;
+  width: 35px;
+  height: 35px;
+  /* background-color: aqua; */
+}
+/* .icon::before {
+    content: url('/assets/img/btn down.svg');
+} */
+/* .FAQ-title::after {
+  content: url("/assets/img/btn down.svg");
+  position: absolute;
+  right: 20px;
+  top: 5px;
+} */
+.FAQ-description {
+  width: 100%;
+  padding: 10px 0;
+  font-family: "Exo 2", sans-serif;
+}

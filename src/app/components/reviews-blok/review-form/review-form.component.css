@@ -1,0 +1,134 @@
+.review-form {
+  width: 100%;
+  max-width: 700px;
+  height: fit-content;
+  border-radius: 15px;
+  padding: 20px 0;
+  background-color: rgb(255, 255, 255);
+  box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.3);
+  grid-column: 2/3;
+  display: flex;
+  flex-direction: column;
+  margin: 40px auto;
+}
+.review-form-title {
+  margin-bottom: 15px;
+  align-self: center;
+  font-family: "Exo 2", sans-serif;
+  /* font-family: "Caveat", cursive; */
+
+  font-size: 32px;
+  line-height: 36px;
+  font-weight: 600;
+  color: rgba(0, 0, 0, 0.699);
+}
+.review-form-blok {
+  /* display: grid; */
+  /* grid-template-rows: 100px 100px auto; */
+  display: flex;
+  flex-direction: column;
+}
+.review-form-name {
+  margin-left: 50px;
+  position: relative;
+}
+.review-form-review {
+  position: relative;
+  margin-top: 20px;
+  margin-left: 50px;
+}
+.form-submit {
+  margin-top: 20px;
+  align-self: center;
+  width: 150px;
+  border-radius: 10px;
+  padding: 15px 0;
+  box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.3);
+  border: none;
+  background-color: #93ccf2;
+  background-image: -webkit-linear-gradient(
+    45deg,
+    rgba(255, 255, 255, 0.25) 25%,
+    transparent 25%,
+    transparent 50%,
+    rgba(255, 255, 255, 0.25) 50%,
+    rgba(255, 255, 255, 0.25) 75%,
+    transparent 75%,
+    transparent
+  );
+  font-family: "Exo 2", sans-serif;
+  /* font-family: "Caveat", cursive; */
+  font-size: 20px;
+  font-weight: 600;
+  color: rgba(0, 0, 0, 0.699);
+  cursor: pointer;
+  transition: transform 0.4s;
+}
+.form-submit:hover {
+  transform: scale(1.1);
+}
+.title {
+  position: absolute;
+  top: 5px;
+  left: 10px;
+  padding: 0 5px;
+  background-color: rgb(255, 255, 255);
+  display: block;
+  font-family: "Exo 2", sans-serif;
+  font-size: 15px;
+  font-weight: 600;
+  color: rgba(0, 0, 0, 0.699);
+}
+.review-form-name-input {
+  width: 60%;
+  max-width: 300px;
+  height: 30px;
+  font-family: "Exo 2", sans-serif;
+  /* font-family: "Caveat", cursive; */
+  margin-top: 15px;
+  border: none;
+  border: 1px solid rgba(0, 0, 0, 0.342);
+  font-size: 20px;
+  padding: 5px;
+}
+.review-form-name-review {
+  width: 90%;
+  padding: 5px;
+  height: fit-content;
+  min-height: 100px;
+  font-family: "Exo 2", sans-serif;
+  /* font-family: "Caveat", cursive; */
+  margin-top: 15px;
+  border: none;
+  border: 1px solid rgba(0, 0, 0, 0.342);
+  font-size: 20px;
+  resize: none;
+}
+.review-form-name-review-info {
+  position: absolute;
+  right: 10%;
+  font-family: "Exo 2", sans-serif;
+  font-size: 13px;
+  top: -5px;
+}
+.invalid {
+  border: 1px solid red;
+}
+.invalid-title {
+  color: red;
+}
+.notification {
+  position: absolute;
+  display: block;
+  font-family: "Exo 2", sans-serif;
+  padding-top: 3px;
+  font-size: 13px;
+  font-weight: 100;
+  color: red;
+}
+.invalid-submit{
+  background-color:#8a8a8a
+}
+.invalid-submit:hover {
+  transform: none
+}

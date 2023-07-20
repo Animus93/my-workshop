@@ -1,0 +1,18 @@
+<div id="panel" class="top-panel">
+  <ul class="menu">
+    <li>
+      <a class="menu__item" [routerLink]="['']" fragment="app-container"
+        >Главная</a
+      >
+    </li>
+    <li><a class="menu__item" routerLink="contacts">Контакты</a></li>
+    <li>
+      <a class="menu__item" [routerLink]="['']" fragment="faq">FAQ</a>
+    </li>
+    <li>
+      <a class="menu__item" [routerLink]="['']" fragment="reviews">Отзывы</a>
+    </li>
+  </ul>
+  <!-- <h1 (contextmenu)="validatePassword($event)" class="title">{{ title | titlecase }}</h1> -->
+  <h1 (click)="validatePassword($event)" class="title">{{ title | titlecase }}</h1>
+</div>

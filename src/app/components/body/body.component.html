@@ -1,0 +1,3 @@
+<div *ngIf="data$ | async as items" class="body-container">
+  <app-card *ngFor="let item of items" [item]="item"> </app-card>
+</div>

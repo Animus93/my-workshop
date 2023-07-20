@@ -1,0 +1,16 @@
+<div class="slider-edit-form-content">
+  <div
+    class="slider-edit-form-img"
+    [ngStyle]="{ 'background-image': getUrl() }"
+  ></div>
+  <input class="slider-edit-form-input" [(ngModel)]="url" />
+  <button
+    [class.invalid-submit]="getUrl().length < 10"
+    [disabled]="getUrl().length < 10"
+    class="slider-edit-form-submit"
+    type="button"
+    (click)="addImg()"
+  >
+    Сохранить
+  </button>
+</div>

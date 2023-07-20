@@ -1,0 +1,22 @@
+.telegram {
+  cursor: pointer;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 5px;
+  background-color: rgb(63, 163, 250);
+  color: rgb(255, 255, 255);
+  font-size: medium;
+  border: none;
+  border-radius: 5px;
+  padding: 10px 5px;
+  margin-top: 5px;
+  transition: 0.3s ease-in-out;
+}
+.icon {
+  width: 15px;
+}
+.telegram:hover {
+  background-color: rgba(63, 163, 250, 0.425);
+  color: rgb(0, 0, 0);
+}

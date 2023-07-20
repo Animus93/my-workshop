@@ -1,0 +1,11 @@
+<div id="{{ item.id }}" class="card">
+  <a routerLink="detail/{{ item.id }}">
+    <div class="card-img" [ngStyle]="{ 'background-image': getImg() }"></div>
+    <p class="card-title">{{ item.title | maxLength : 35 }}</p>
+    <p class="card-price">Цена: {{ item.price }} рублей</p>
+  </a>
+  <app-telegram-button class="telegram" [item]="item"></app-telegram-button>
+  <div class="card-description">
+    {{ item.description | maxLength: 200 }}
+  </div>
+</div>

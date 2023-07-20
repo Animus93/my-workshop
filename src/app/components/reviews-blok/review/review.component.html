@@ -1,0 +1,7 @@
+<div *ngIf="review" class="review">
+  <h1 class="review-name">{{ review.name | titlecase }}</h1>
+  <p class="review-body">
+    {{ review.review | maxLength : 150 }}
+  </p>
+  <button class="review-button" *ngIf="!user" (click)="deleteReview(review)"></button>
+</div>

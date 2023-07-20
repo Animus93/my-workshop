@@ -1,0 +1,73 @@
+a {
+  all: initial;
+  cursor: pointer;
+}
+.card {
+  position: relative;
+  width: 270px;
+  height: 410px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
+  transition: 0.4s ease-in-out;
+  border-radius: 15px;
+  padding: 10px;
+}
+.card-img {
+  justify-self: center;
+  width: 270px;
+  height: 330px;
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: cover;
+  transition: 0.5s ease-in-out;
+  box-shadow: 1px 1px 3px rgba(0, 0, 0, 0.3);
+  border-top-left-radius: 10px;
+  border-top-right-radius: 10px;
+  margin-bottom: 10px;
+}
+.card-price {
+  font-family: "Exo 2", sans-serif;
+  font-weight: 600;
+  margin: auto;
+  font-size: 14px;
+  transition: color 0.5s ease-in-out;
+  text-align: center;
+}
+.card-title {
+  margin: auto;
+  font-size: 14px;
+  font-family: "Exo 2", sans-serif;
+  transition: color 0.5s ease-in-out;
+  text-align: center;
+}
+.card:hover .card-img {
+  transform: scale(1.03);
+}
+.card:hover {
+  box-shadow: 0 3px 10px rgb(0 0 0 / 0.2);
+}
+.card-description {
+  position: absolute;
+  opacity: 0;
+  transform: translateY(50px);
+  transition: opacity 0.5s ease-in-out, transform 0.5s ease-in-out;
+  transition-delay: 0.2s;
+  bottom: 90px;
+  width: 250px;
+  height: fit-content;
+  max-height: 310px;
+  overflow: hidden;
+  font-family: "Exo 2", sans-serif;
+  background-color: #f3d7bdc7;
+  border: 1px solid #ccc;
+  border-radius: 10px;
+  padding: 10px;
+  pointer-events: none;
+  z-index: 1;
+}
+.card:hover .card-description {
+  opacity: 1;
+  transform: translateY(0);
+}

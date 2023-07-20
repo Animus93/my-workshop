@@ -1,0 +1,9 @@
+.info-blok {
+  border-radius: 5px;
+  width: 100%;
+  height: fit-content;
+  justify-content: center;
+  padding: 20px 0;
+  background-color: rgb(255, 255, 255);
+  box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.3);
+}

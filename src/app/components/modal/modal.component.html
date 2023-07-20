@@ -1,0 +1,15 @@
+<div
+  class="modal-container"
+  (mousedown)="$event.currentTarget == $event.target ? modal.setType('') : null"
+>
+  <app-t-btn-from
+    class="app-t-btn-from"
+    *ngIf="this.modal.getType() === 't-btn-from'"
+  ></app-t-btn-from>
+  <app-slider-edit-form
+    *ngIf="this.modal.getType() === 'slider-edit-form'"
+  ></app-slider-edit-form>
+
+  <app-item-edit-form *ngIf="this.modal.getType() === 'item-edit-form'">
+  </app-item-edit-form>
+</div>

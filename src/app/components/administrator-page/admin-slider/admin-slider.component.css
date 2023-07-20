@@ -1,0 +1,75 @@
+.admin-slider-container {
+  width: 100%;
+  height: fit-content;
+  display: flex;
+  gap: 10px;
+  flex-direction: column;
+}
+.admin-slider-title {
+  display: flex;
+  box-shadow: 0 3px 10px rgb(0 0 0 / 0.2);
+  justify-content: center;
+  align-items: center;
+  align-self: center;
+  font-family: "Exo 2", sans-serif;
+  font-size: 25px;
+  height: 60px;
+  width: 90%;
+  cursor: pointer;
+  transition: 0.3s ease-in-out;
+}
+.admin-slider-title:hover {
+  box-shadow: 1px 1px 13px rgba(142, 144, 243, 0.9);
+}
+.admin-slider-content {
+  width: 100%;
+  height: fit-content;
+  /* box-shadow: 0 3px 10px rgb(0 0 0 / 0.2); */
+  display: grid;
+  justify-content: center;
+  grid-template-columns: repeat(auto-fill, 300px);
+  gap: 5px;
+}
+.admin-slider-content-add-item,
+.admin-slider-content-item {
+  position: relative;
+  background-color: antiquewhite;
+  width: 270px;
+  height: 330px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: contain;
+  cursor: pointer;
+}
+.icon {
+  background-image: url("/assets/img/addButton.svg");
+  transition: 0.5s ease-in-out;
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: contain;
+  width: 100px;
+  height: 100px;
+}
+.admin-slider-content-add-item:hover .icon {
+  transform: scale(1.3);
+}
+.admin-slider-content-remove-item {
+  cursor: pointer;
+  position: absolute;
+  right: 10px;
+  top: 10px;
+  width: 35px;
+  height: 35px;
+  background: url("/assets/img/delete.svg");
+  border: none;
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: contain;
+  transition: 0.3s ease-in-out;
+}
+.admin-slider-content-remove-item:hover {
+  transform: scale(1.5);
+}

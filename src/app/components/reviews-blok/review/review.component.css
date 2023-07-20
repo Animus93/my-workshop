@@ -1,0 +1,42 @@
+.review {
+  position: relative;
+  width: 280px;
+  height: 140px;
+  border-radius: 5px;
+  padding: 10px;
+  background-color: rgb(255, 255, 255);
+  box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.3);
+}
+.review-name {
+  font-family: "Caveat", cursive;
+  font-size: 25px;
+  margin-top: 8px;
+  margin-left: 30px;
+  margin-bottom: 10px;
+  line-height: 18px;
+}
+.review-body {
+  margin-left: 10px;
+  font-size: 14px;
+  line-height: 18px;
+  font-family: "Exo 2", sans-serif;
+}
+.review-button {
+  width: 25px;
+  transition: 0.3s ease-in-out;
+  cursor: pointer;
+  position: absolute;
+  right: 10px;
+  top: 10px;
+  width: 30px;
+  height: 30px;
+  background: url("/assets/img/delete.svg");
+  border: none;
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: contain;
+  transition: 0.3s ease-in-out;
+}
+.review-button:hover {
+  transform: scale(1.4);
+}

@@ -1,0 +1,13 @@
+<div class="item-page-container">
+  <!-- <a [routerLink]="['']" fragment="{{ getId() }}">close</a> -->
+  <a class="item-back-btn" [routerLink]="['']" fragment="items">Назад</a>
+  <div *ngIf="item$ | async as item" class="item-content">
+    <h1 class="item-title">{{ item.title | titlecase }}</h1>
+    <img class="item-img" src="{{ item.img }}" alt="item-preview" />
+    <p *ngIf="item.price" class="item-price">Цена: {{ item.price }} Rub</p>
+    <app-telegram-button class="telegram" [item]="item"></app-telegram-button>
+    <p class="item-description">{{ item.description }}</p>
+  <app-reviews-blok [user]="true"></app-reviews-blok>
+
+  </div>
+</div>

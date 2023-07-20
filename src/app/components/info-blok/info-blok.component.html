@@ -1,0 +1,6 @@
+<div class="info-blok">
+  <app-info-blok-item
+    *ngFor="let blok of bloks$ | async"
+    [blok]="blok"
+  ></app-info-blok-item>
+</div>

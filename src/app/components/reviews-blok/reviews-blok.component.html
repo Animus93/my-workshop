@@ -1,0 +1,15 @@
+<div class="reviews-blok">
+  <h1 *ngIf="user" class="reviews-blok-title">Последние отзывы</h1>
+  <div *ngIf="reviews$ | async as data" class="reviews" appHorizontalScroll>
+    <app-review
+    [user]="user"
+      *ngFor="let review of data.reverse()"
+      [review]="review"
+    ></app-review>
+  </div>
+  <div class="review-form">
+    <app-review-form *ngIf="user"></app-review-form>
+  </div>
+</div>
+<!-- [ngClass]="user ? 'reviews-blok' : 'admin-reviews-blok'" -->
+<!-- [ngClass]="user ? 'reviews' : 'admin-reviews'" -->
