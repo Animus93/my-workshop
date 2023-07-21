@@ -3,6 +3,7 @@ import { SliderService } from 'src/app/services/slider.service';
 import { ModalService } from 'src/app/services/modal.service';
 import { SlideInterface } from 'src/app/interfaces/slider.interface';
 import { Observable, Subscription } from 'rxjs';
+import { NotificationService } from 'src/app/services/notification.service';
 
 @Component({
   selector: 'app-admin-slider',
@@ -10,7 +11,8 @@ import { Observable, Subscription } from 'rxjs';
   styleUrls: ['./admin-slider.component.css'],
 })
 export class AdminSliderComponent {
-  constructor(private modal: ModalService, public api: SliderService) {}
+  constructor(private modal: ModalService, public api: SliderService,
+    private notification: NotificationService) {}
   public visible: boolean = !true;
   sliderData$: Observable<SlideInterface[]> = this.api.sliderDataBSubject$;
   private subscriptions$: Subscription = new Subscription();
@@ -35,6 +37,8 @@ export class AdminSliderComponent {
       const prepareData = this.api.sliderDataBSubject$.value.filter(
         (slide) => slide.id !== data.id
       );
+      this.notification.swithcVisible()
+      this.notification.setData('Изображение удалено из слайдера')
       return this.api.sliderDataBSubject$.next(prepareData);
     });
     this.subscriptions$.add(removeSliderData$);

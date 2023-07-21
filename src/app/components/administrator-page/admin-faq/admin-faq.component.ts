@@ -3,6 +3,7 @@ import { FormControl, FormGroup, Validators } from '@angular/forms';
 import { Observable, Subscription } from 'rxjs';
 import { Ifaq } from 'src/app/interfaces/faq.interface';
 import { FaqService } from 'src/app/services/faq.service';
+import { NotificationService } from 'src/app/services/notification.service';
 
 @Component({
   selector: 'app-admin-faq',
@@ -11,7 +12,10 @@ import { FaqService } from 'src/app/services/faq.service';
 })
 //изменить данные доабвить сервис faq
 export class AdminFaqComponent {
-  constructor(private faqService: FaqService) {}
+  constructor(
+    private faqService: FaqService,
+    private notification: NotificationService
+  ) {}
   visible = !true;
   subscriptions$: Subscription = new Subscription();
   faqSubject$: Observable<Ifaq[]> = this.faqService.faqSubject$;
@@ -31,7 +35,8 @@ export class AdminFaqComponent {
     if (item.question.length && item.answer.length) {
       const edit = this.faqService.putFAQItem(item).subscribe((data) => {
         this.editInfoData(data);
-        alert('Изменения сохранены');
+        this.notification.swithcVisible();
+        this.notification.setData('Изменения сохранены');
       });
       this.subscriptions$.add(edit);
     }
@@ -58,7 +63,8 @@ export class AdminFaqComponent {
           const prepereData = [...this.faqService.faqSubject$.value, data];
           this.faqService.faqSubject$.next(prepereData);
           this.applyForm.reset();
-          alert('Запись добавлена');
+          this.notification.swithcVisible();
+          this.notification.setData('Запись добавлена');
         });
       this.subscriptions$.add(postInfoBlok);
     }
@@ -68,14 +74,14 @@ export class AdminFaqComponent {
   }
   deleteBlok(id: number | undefined) {
     if (id) {
-      const removeBlok = this.faqService
-        .deleteFAQItem(id)
-        .subscribe((data) => {
-          const prepereData = this.faqService.faqSubject$.value.filter(
-            (item) => item.id !== data.id
-          );
-          this.faqService.faqSubject$.next(prepereData);
-        });
+      const removeBlok = this.faqService.deleteFAQItem(id).subscribe((data) => {
+        const prepereData = this.faqService.faqSubject$.value.filter(
+          (item) => item.id !== data.id
+        );
+        this.faqService.faqSubject$.next(prepereData);
+        this.notification.swithcVisible();
+        this.notification.setData('Запись удалена');
+      });
       this.subscriptions$.add(removeBlok);
     }
   }

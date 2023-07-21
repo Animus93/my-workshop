@@ -3,6 +3,7 @@ import { SliderService } from 'src/app/services/slider.service';
 import { ModalService } from 'src/app/services/modal.service';
 import { Subscription } from 'rxjs';
 import { SlideInterface } from 'src/app/interfaces/slider.interface';
+import { NotificationService } from 'src/app/services/notification.service';
 
 @Component({
   selector: 'app-slider-edit-form',
@@ -10,7 +11,8 @@ import { SlideInterface } from 'src/app/interfaces/slider.interface';
   styleUrls: ['./slider-edit-form.component.css'],
 })
 export class SliderEditFormComponent {
-  constructor(private api: SliderService, private modal: ModalService) {}
+  constructor(private api: SliderService, private modal: ModalService,
+    private notification: NotificationService) {}
   url: string = '';
   updSlider$?: Subscription;
   getUrl() {
@@ -27,6 +29,8 @@ export class SliderEditFormComponent {
         ];
         this.api.sliderDataBSubject$.next(temp);
         this.modal.setType('');
+        this.notification.swithcVisible()
+        this.notification.setData('Изображение добавленно в слайдер')
       });
   }
 

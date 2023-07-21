@@ -3,6 +3,7 @@ import { BehaviorSubject, Observable, Subscription } from 'rxjs';
 import { Iitem } from 'src/app/interfaces/card.interface';
 import { ItemsService } from 'src/app/services/items.service';
 import { ModalService } from 'src/app/services/modal.service';
+import { NotificationService } from 'src/app/services/notification.service';
 
 @Component({
   selector: 'app-admin-items',
@@ -12,7 +13,8 @@ import { ModalService } from 'src/app/services/modal.service';
 export class AdminItemsComponent {
   constructor(
     private itemsService: ItemsService,
-    private modal: ModalService
+    private modal: ModalService,
+    private notification: NotificationService
   ) {}
   items$: Observable<Iitem[]> = this.itemsService.itemsDataBSubject$;
 
@@ -55,6 +57,8 @@ export class AdminItemsComponent {
               (item) => item.id !== data.id
             );
           this.itemsService.itemsDataBSubject$.next(prepereData);
+          this,this.notification.swithcVisible()
+          this.notification.setData(`${data.title} - удален из списка товаров`)
         });
       this.subscriptions$.add(deleteItem$);
     }

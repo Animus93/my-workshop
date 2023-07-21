@@ -4,6 +4,7 @@ import { FormControl, FormGroup, Validators } from '@angular/forms';
 import { TelegramApiService } from 'src/app/services/telegram-api.service';
 import { Iitem } from 'src/app/interfaces/card.interface';
 import { Subscription } from 'rxjs';
+import { NotificationService } from 'src/app/services/notification.service';
 
 @Component({
   selector: 'app-t-btn-from',
@@ -13,13 +14,17 @@ import { Subscription } from 'rxjs';
 export class TBtnFromComponent {
   constructor(
     public modal: ModalService,
-    private telegtam: TelegramApiService
+    private telegtam: TelegramApiService,
+    private notification: NotificationService
   ) {}
-  item: Iitem|null = this.modal.getItemData();
+  item: Iitem | null = this.modal.getItemData();
   isValidate: boolean = false;
   subscriptions: Subscription = new Subscription();
   getImg() {
     return `url(${this.item?.img})`;
+  }
+  closeModal() {
+    this.modal.setType('');
   }
 
   applyForm = new FormGroup({
@@ -47,14 +52,17 @@ export class TBtnFromComponent {
       })
       .subscribe((response) => {
         if (response.ok) {
-          alert('заказ принят в ближайщее время мы свяжемся с вами');
+          this.notification.swithcVisible();
+          this.notification.setData(
+            'заказ принят в ближайщее время мы свяжемся с вами'
+          );
           this.modal.setType('');
         }
       });
     this.subscriptions.add(sendMessage$);
   }
   ngOnDestroy() {
-    this.modal.setItemData(null)
+    this.modal.setItemData(null);
     this.subscriptions.unsubscribe();
   }
 }

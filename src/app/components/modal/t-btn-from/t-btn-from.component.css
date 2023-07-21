@@ -9,6 +9,7 @@
   grid-template-rows: 30px auto;
   grid-template-columns: 50% 50%;
   padding: 10px;
+  position: relative;
 }
 .card-img {
   width: 270px;
@@ -122,6 +123,23 @@
 }
 .invalid {
   border-color: red;
+}
+.close-modal {
+  width: 70px;
+  height: 30px;
+  position: absolute;
+  right: 0;
+  top: 5px;
+  background: url("src/assets/img/close.png");
+  border: none;
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: contain;
+  transition: 0.3s ease-in-out;
+  cursor: pointer;
+}
+.close-modal:hover {
+  transform: scale(1.2);
 }
 @media (max-width: 660px) {
   .modal-content {

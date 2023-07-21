@@ -5,7 +5,6 @@
   justify-content: center;
   /* padding: 30px 0; */
   padding-top: 40px;
-
 }
 .FAQ-item {
   cursor: pointer;
@@ -22,10 +21,7 @@
   position: relative;
 }
 .FAQ-title {
-  /* border: 1px solid black; */
-
   font-family: "Exo 2", sans-serif;
-  /* position: relative; */
 }
 .icon {
   position: absolute;
@@ -35,17 +31,19 @@
   height: 35px;
   /* background-color: aqua; */
 }
-/* .icon::before {
-    content: url('/assets/img/btn down.svg');
-} */
-/* .FAQ-title::after {
-  content: url("/assets/img/btn down.svg");
-  position: absolute;
-  right: 20px;
-  top: 5px;
-} */
 .FAQ-description {
   width: 100%;
-  padding: 10px 0;
+  padding: 10px;
   font-family: "Exo 2", sans-serif;
+}
+@media (max-width: 650px) {
+  .FAQ-description {
+    font-size: 15px;
+    margin-right: 30px;
+    width: 85vw;
+  }
+  .FAQ-title {
+    font-size: 15px;
+    margin-right: 45px;
+  }
 }

@@ -2,5 +2,6 @@
   <app-top-fixed-panel [title]="title"></app-top-fixed-panel>
   <router-outlet></router-outlet>
   <app-modal *ngIf="modal.getType().length > 1"></app-modal>
+  <app-notification class="notification" *ngIf="notification.getVisibility()"></app-notification>
   <app-bottom-fixed-panel></app-bottom-fixed-panel>
 </div>

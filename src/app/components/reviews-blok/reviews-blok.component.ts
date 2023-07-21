@@ -16,7 +16,7 @@ export class ReviewsBlokComponent {
   private subscriptions$: Subscription = new Subscription();
   ngOnInit(): void {
     const getData = this.reviewsService.getReviews().subscribe((data) => {
-      this.reviewsService.reviewsDataBSubject.next(data);
+      this.reviewsService.reviewsDataBSubject.next(data.reverse());
     });
     this.subscriptions$.add(getData);
   }

@@ -3,6 +3,7 @@ import { FormControl, FormGroup, Validators } from '@angular/forms';
 import { Observable, Subscription } from 'rxjs';
 import { infoBlok } from 'src/app/interfaces/infoBlok.interface';
 import { InfoBlokService } from 'src/app/services/info-blok.service';
+import { NotificationService } from 'src/app/services/notification.service';
 
 @Component({
   selector: 'app-admin-info',
@@ -10,7 +11,10 @@ import { InfoBlokService } from 'src/app/services/info-blok.service';
   styleUrls: ['./admin-info.component.css'],
 })
 export class AdminInfoComponent {
-  constructor(private infoBlokService: InfoBlokService) {}
+  constructor(
+    private infoBlokService: InfoBlokService,
+    private notification: NotificationService
+  ) {}
   visible = !true;
   subscriptions$: Subscription = new Subscription();
   itemSubject$: Observable<infoBlok[]> = this.infoBlokService.infoBloksSubject$;
@@ -30,7 +34,8 @@ export class AdminInfoComponent {
     if (item.title.length && item.description.length) {
       const edit = this.infoBlokService.putInfoBlok(item).subscribe((data) => {
         this.editInfoData(data);
-        alert('Изменения сохранены')
+        this.notification.swithcVisible();
+        this.notification.setData('Изменения сохранены');
       });
       this.subscriptions$.add(edit);
     }
@@ -59,7 +64,8 @@ export class AdminInfoComponent {
           ];
           this.infoBlokService.infoBloksSubject$.next(prepereData);
           this.applyForm.reset();
-          alert('Запись добавлена')
+          this.notification.swithcVisible();
+          this.notification.setData('Запись добавлена');
         });
       this.subscriptions$.add(postInfoBlok);
     }
@@ -77,6 +83,8 @@ export class AdminInfoComponent {
               (item) => item.id !== data.id
             );
           this.infoBlokService.infoBloksSubject$.next(prepereData);
+          this.notification.swithcVisible();
+          this.notification.setData('Запись удалена');
         });
       this.subscriptions$.add(removeBlok);
     }

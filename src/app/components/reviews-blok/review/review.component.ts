@@ -1,6 +1,7 @@
 import { Component, Input } from '@angular/core';
 import { Subscription } from 'rxjs';
 import { Ireview } from 'src/app/interfaces/rewiew.interface';
+import { NotificationService } from 'src/app/services/notification.service';
 import { ReviewsService } from 'src/app/services/reviews.service';
 
 @Component({
@@ -9,7 +10,8 @@ import { ReviewsService } from 'src/app/services/reviews.service';
   styleUrls: ['./review.component.css'],
 })
 export class ReviewComponent {
-  constructor(private reviewService: ReviewsService) {}
+  constructor(private reviewService: ReviewsService,
+    private notification: NotificationService) {}
 
   @Input() review?: Ireview;
   @Input() user?: boolean = false;
@@ -26,6 +28,8 @@ export class ReviewComponent {
               (review) => review.id !== data.id
             );
           this.reviewService.reviewsDataBSubject.next(prepareData);
+          this.notification.swithcVisible()
+          this.notification.setData('Отзыв удален')
         });
       this.subscriptions$.add(deleteReview$);
     }

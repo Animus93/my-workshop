@@ -118,7 +118,7 @@
   top: 10px;
   width: 30px;
   height: 30px;
-  background: url("assets/img/delete.svg");
+  background: url("src/assets/img/delete.svg");
   border: none;
   background-repeat: no-repeat;
   background-position: center;

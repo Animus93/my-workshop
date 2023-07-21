@@ -1,5 +1,6 @@
 import { Component } from '@angular/core';
 import { ModalService } from './services/modal.service';
+import { NotificationService } from './services/notification.service';
 
 @Component({
   selector: 'app-root',
@@ -8,5 +9,5 @@ import { ModalService } from './services/modal.service';
 })
 export class AppComponent {
   title = 'Моя мастерская';
-  constructor(public modal: ModalService) {}
+  constructor(public modal: ModalService, public notification: NotificationService) {}
 }

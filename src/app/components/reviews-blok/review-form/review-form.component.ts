@@ -1,6 +1,7 @@
 import { Component } from '@angular/core';
 import { FormControl, FormGroup, Validators } from '@angular/forms';
 import { Subscription } from 'rxjs';
+import { NotificationService } from 'src/app/services/notification.service';
 import { ReviewsService } from 'src/app/services/reviews.service';
 
 @Component({
@@ -9,7 +10,10 @@ import { ReviewsService } from 'src/app/services/reviews.service';
   styleUrls: ['./review-form.component.css'],
 })
 export class ReviewFormComponent {
-  constructor(private reviewService: ReviewsService) {}
+  constructor(
+    private reviewService: ReviewsService,
+    private notification: NotificationService
+  ) {}
 
   isValidate: boolean = false;
   private subscriptions$: Subscription = new Subscription();
@@ -57,10 +61,13 @@ export class ReviewFormComponent {
         })
         .subscribe((data) => {
           this.reviewService.reviewsDataBSubject.next([
-            ...this.reviewService.reviewsDataBSubject.value,
             data,
+            ...this.reviewService.reviewsDataBSubject.value,
           ]);
-          alert(` ${this.applyForm.value.name} cпасибо за отзыв!`);
+          this.notification.swithcVisible();
+          this.notification.setData(
+            `${this.applyForm.value.name} cпасибо за отзыв!`
+          );
           this.applyForm.reset();
         });
       this.subscriptions$.add(postReview$);

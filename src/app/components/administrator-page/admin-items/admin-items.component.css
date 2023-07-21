@@ -33,7 +33,7 @@
   justify-content: center;
 }
 .icon {
-  background-image: url("assets/img/addButton.svg");
+  background-image: url("src/assets/img/addButton.svg");
   transition: 0.5s ease-in-out;
   background-repeat: no-repeat;
   background-position: center;
@@ -147,7 +147,7 @@
   width: 35px;
   height: 35px;
   border: none;
-  background: url("assets/img/edit.png");
+  background: url("src/assets/img/edit.png");
   background-repeat: no-repeat;
   background-position: center;
   background-size: contain;
@@ -162,7 +162,7 @@
   cursor: pointer;
   background: none;
   border: none;
-  background: url("assets/img/delete.svg");
+  background: url("src/assets/img/delete.svg");
   background-repeat: no-repeat;
   background-position: center;
   background-size: contain;

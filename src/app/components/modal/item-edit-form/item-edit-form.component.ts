@@ -4,6 +4,7 @@ import { Subscription } from 'rxjs';
 import { Iitem } from 'src/app/interfaces/card.interface';
 import { ItemsService } from 'src/app/services/items.service';
 import { ModalService } from 'src/app/services/modal.service';
+import { NotificationService } from 'src/app/services/notification.service';
 
 @Component({
   selector: 'app-item-edit-form',
@@ -14,7 +15,7 @@ import { ModalService } from 'src/app/services/modal.service';
 export class ItemEditFormComponent {
   // item = this.modal.getData()
   // получить итем
-  constructor(private itemService: ItemsService, private modal: ModalService) {}
+  constructor(private itemService: ItemsService, private modal: ModalService, private notification: NotificationService) {}
 
   private subscriptions$: Subscription = new Subscription();
   item: Iitem | null = this.modal.getItemData();
@@ -48,11 +49,15 @@ export class ItemEditFormComponent {
     if (this.item) {
       const putItem$ = this.itemService.putItem(data).subscribe((data) => {
         this.putQuery(data);
+        this.notification.swithcVisible()
+        this.notification.setData(`Товар ${data.title} обновлен`)
       });
       return this.subscriptions$.add(putItem$);
     }
     const sendItem$ = this.itemService.postItem(data).subscribe((data) => {
       this.postQuery(data);
+      this.notification.swithcVisible()
+      this.notification.setData(`Товар ${data.title} добавлен`)
     });
     return this.subscriptions$.add(sendItem$);
   }

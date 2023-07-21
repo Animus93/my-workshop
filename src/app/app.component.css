@@ -8,6 +8,12 @@
   grid-template-columns: 100%;
   /* border: 1px dotted rgb(133, 26, 26); */
 }
+.notification {
+  position: fixed;
+  top: 15%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
 @media(max-width: 524px) {
   #app-container {
     width: 100%;

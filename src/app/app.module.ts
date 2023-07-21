@@ -33,6 +33,7 @@ import { AdminItemsComponent } from './components/administrator-page/admin-items
 import { ItemEditFormComponent } from './components/modal/item-edit-form/item-edit-form.component';
 import { AdminInfoComponent } from './components/administrator-page/admin-info/admin-info.component';
 import { AdminFaqComponent } from './components/administrator-page/admin-faq/admin-faq.component';
+import { NotificationComponent } from './components/notification/notification.component';
 
 @NgModule({
   declarations: [
@@ -65,6 +66,7 @@ import { AdminFaqComponent } from './components/administrator-page/admin-faq/adm
     ItemEditFormComponent,
     AdminInfoComponent,
     AdminFaqComponent,
+    NotificationComponent,
   ],
   imports: [
     BrowserModule,
