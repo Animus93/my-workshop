@@ -20,10 +20,12 @@
   font-family: "Caveat", cursive;
   font-size: 28px;
   font-weight: 500;
-  cursor: pointer;
-  /* justify-self: flex-end; */
   text-align: end;
+  width: fit-content;
   padding-right: 40px;
+}
+.icon {
+  height: 100%;
 }
 .fixed {
   position: fixed;
@@ -69,12 +71,20 @@ a {
   }
 }
 
-@media (max-width: 563px) {
+@media (max-width: 580px) {
   .title {
-    display: none;
+    /* display: none; */
+    font-size: 15px;
+    text-align: center;
+    font-weight: 500;
   }
   .menu {
     font-size: 15px;
     gap: 5px;
+  }
+}
+@media (max-width: 455px) {
+  .title{
+    display: none;
   }
 }
